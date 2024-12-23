@@ -1,0 +1,1530 @@
+authors:
+  Peter: "https://peterphan.dev"
+
+stack_sizes:
+  Stack:
+    quantity_multiplier: 64
+    plural: Stacks
+    extends_from: null
+
+index_page_display_name: All the Mods 9 - To the Sky
+
+game_version: Java 1.20.1
+
+recipe_types:
+  Crafting: Craft {IN_ITEMS} into {OUT_ITEM}
+  Smelting: Smelt {IN_ITEMS} into {OUT_ITEM}
+  Pulverizing: Pulverize {IN_ITEMS} into {OUT_ITEM}
+  Induction Smelting: Induction smelt {IN_ITEMS} into {OUT_ITEM}
+  Infusing: Infuse {IN_ITEMS} into {OUT_ITEM}
+  Hammering: Hammer {IN_ITEMS} into {OUT_ITEM}
+  Pressing: Press {IN_ITEMS} into {OUT_ITEM}
+  Strip: Right click on {IN_ITEMS} with an Axe to strip it into {OUT_ITEM}
+
+default_stack_size: Stack
+
+resources:
+  Dirt:
+    recipes:
+    - recipe_type: Raw Resource
+  
+  Wood Log:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Stripped Wood Log:
+    recipes:
+    - output: 1
+      recipe_type: Strip
+      requirements:
+        Wood Log: -1
+    - recipe_type: Raw Resource
+
+  Wood Planks:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Wood Log: -1
+    - recipe_type: Raw Resource
+
+  Sand:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Cobblestone:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Stone:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Cobblestone: -1
+    - recipe_type: Raw Resource
+
+  Ice:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 24
+      recipe_type: Crafting
+      requirements:
+        Ice Essence: -8
+
+  Packed Ice:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Ice: -9
+    - output: 20
+      recipe_type: Crafting
+      requirements:
+        Ice Essence: -9
+    - recipe_type: Raw Resource
+
+  Blue Ice:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Packed Ice: -9
+    - recipe_type: Raw Resource
+
+  Smooth Stone:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Stone: -1
+    - recipe_type: Raw Resource
+
+  Iron Bars:
+    recipes:
+    - output: 16
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -6
+    - recipe_type: Raw Resource
+
+  Bricks:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Brick: -4
+    - recipe_type: Raw Resource
+
+  Netherrack:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 24
+      recipe_type: Crafting
+      requirements:
+        Nether Essence: -8
+
+  Nether Bricks:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Nether Brick: -4
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Nether Essence: -4
+    - recipe_type: Raw Resource
+
+  Obsidian:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Obsidian Essence: -8
+  
+  Crafting Table:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Wood Planks: -4
+    - recipe_type: Raw Resource
+
+  Furnace:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Cobblestone: -8
+    - recipe_type: Raw Resource
+
+  Smoker:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stripped Wood Log: -4
+        Furnace: -1
+    - recipe_type: Raw Resource
+
+  Blast Furnace:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -5
+        Furnace: -1
+        Smooth Stone: -3
+    - recipe_type: Raw Resource
+
+  Chest:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Wood Planks: -8
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Wood Log: -8
+    - recipe_type: Raw Resource
+
+  Brewing Stand:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Blaze Rod: -1
+        Cobblestone: -3
+    - recipe_type: Raw Resource
+
+  Piston:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Wood Planks: -3
+        Cobblestone: -4
+        Iron Ingot: -1
+        Redstone Dust: -1
+    - recipe_type: Raw Resource
+
+  Hopper:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -5
+        Wood Log: -2
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -5
+        Chest: -1
+    - recipe_type: Raw Resource
+
+  Bucket:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -3
+    - recipe_type: Raw Resource
+
+  Stick:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Wood Planks: -2
+    - output: 16
+      recipe_type: Crafting
+      requirements:
+        Wood Log: -2
+    - recipe_type: Raw Resource
+
+  String:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Flint:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Clay Ball:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Brick:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Clay Ball: -1
+    - recipe_type: Raw Resource
+
+  Nether Brick:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Netherrack: -1
+    - recipe_type: Raw Resource
+
+  Blaze Rod:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Blaze Powder:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Blaze Rod: -1
+    - recipe_type: Raw Resource
+
+  Compass:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -4
+        Redstone Dust: -1
+    - recipe_type: Raw Resource
+
+  Redstone Dust:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 9
+      recipe_type: Crafting
+      requirements:
+        Block of Redstone: -1
+    - output: 12
+      recipe_type: Crafting
+      requirements:
+        Redstone Essence: -8
+
+  Glowstone Dust:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Ender Pearl:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Diamond:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Emerald:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Lapis Lazuli:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Crystallized Menril Chunk:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 9
+      recipe_type: Crafting
+      requirements:
+        Block of Crystallized Menril: -1
+
+  Coal:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 12
+      recipe_type: Crafting
+      requirements:
+        Coal Essence: -8
+
+  Nether Quartz:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Iron Ingot:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Iron Dust: -1
+    - output: 9
+      recipe_type: Crafting
+      requirements:
+        Block of Iron: -1
+
+  Gold Ingot:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Gold Dust: -1
+
+  Copper Ingot:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Copper Dust: -1
+
+  Tin Ingot:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Tin Dust: -1
+
+  Nickel Ingot:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Nickel Dust: -1
+
+  Silver Ingot:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Silver Dust: -1
+
+  Lead Ingot:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Lead Dust: -1
+
+  Zinc Ingot:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Zinc Dust: -1
+
+  Aluminum Ingot:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Aluminum Dust: -1
+
+  Osmium Ingot:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Osmium Dust: -1
+
+  Platinum Ingot:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Platinum Dust: -1
+
+  Uranium Ingot:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Uranium Dust: -1
+  
+  Iridium Ingot:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Iridium Dust: -1
+
+  Steel Ingot:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Steel Dust: -1
+    - recipe_type: Raw Resource
+
+  Invar Ingot:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Invar Dust: -1
+    - recipe_type: Raw Resource
+
+  Electrum Ingot:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Electrum Dust: -1
+    - recipe_type: Raw Resource
+
+  Bronze Ingot:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Bronze Dust: -1
+    - recipe_type: Raw Resource
+
+  Enderium Ingot:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Enderium Dust: -1
+    - recipe_type: Raw Resource
+
+  Lumium Ingot:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Lumium Dust: -1
+    - recipe_type: Raw Resource
+
+  Signalum Ingot:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Signalum Dust: -1
+    - recipe_type: Raw Resource
+
+  Constantan Ingot:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Constantan Dust: -1
+    - recipe_type: Raw Resource
+
+  Brass Ingot:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Brass Dust: -1
+    - recipe_type: Raw Resource
+
+  Block of Iron:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -9
+    - recipe_type: Raw Resource
+
+  Block of Redstone:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Redstone Dust: -9
+    - recipe_type: Raw Resource
+
+  Block of Crystallized Menril:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+       Crystallized Menril Chunk: -9
+    - recipe_type: Raw Resource
+
+  Iron Dust:
+    recipes:
+    - output: 1
+      recipe_type: Pulverizing
+      requirements:
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Gold Dust:
+    recipes:
+    - output: 1
+      recipe_type: Pulverizing
+      requirements:
+        Gold Ingot: -1
+    - recipe_type: Raw Resource
+
+  Diamond Dust:
+    recipes:
+    - output: 1
+      recipe_type: Pulverizing
+      requirements:
+        Diamond: -1
+    - recipe_type: Raw Resource
+
+  Obsidian Dust:
+    recipes:
+    - output: 1
+      recipe_type: Pulverizing
+      requirements:
+        Obsidian: -1
+    - recipe_type: Raw Resource
+
+  Refined Obsidian Dust:
+    recipes:
+    - output: 1
+      recipe_type: Infusing
+      requirements:
+        Obsidian Dust: -1
+        Diamond Dust: -1
+    - recipe_type: Raw Resource
+
+  Copper Dust:
+    recipes:
+    - output: 1
+      recipe_type: Pulverizing
+      requirements:
+        Copper Ingot: -1
+    - recipe_type: Raw Resource
+
+  Tin Dust:
+    recipes:
+    - output: 1
+      recipe_type: Pulverizing
+      requirements:
+        Tin Ingot: -1
+    - recipe_type: Raw Resource
+
+  Nickel Dust:
+    recipes:
+    - output: 1
+      recipe_type: Pulverizing
+      requirements:
+        Nickel Ingot: -1
+    - recipe_type: Raw Resource
+
+  Silver Dust:
+    recipes:
+    - output: 1
+      recipe_type: Pulverizing
+      requirements:
+        Silver Ingot: -1
+    - recipe_type: Raw Resource
+
+  Lead Dust:
+    recipes:
+    - output: 1
+      recipe_type: Pulverizing
+      requirements:
+        Lead Ingot: -1
+    - recipe_type: Raw Resource
+
+  Zinc Dust:
+    recipes:
+    - output: 1
+      recipe_type: Pulverizing
+      requirements:
+        Zinc Ingot: -1
+    - recipe_type: Raw Resource
+
+  Aluminum Dust:
+    recipes:
+    - output: 1
+      recipe_type: Pulverizing
+      requirements:
+        Aluminum Ingot: -1
+    - recipe_type: Raw Resource
+
+  Osmium Dust:
+    recipes:
+    - output: 1
+      recipe_type: Pulverizing
+      requirements:
+        Osmium Ingot: -1
+    - recipe_type: Raw Resource
+
+  Platinum Dust:
+    recipes:
+    - output: 1
+      recipe_type: Pulverizing
+      requirements:
+        Platinum Ingot: -1
+    - recipe_type: Raw Resource
+
+  Uranium Dust:
+    recipes:
+    - output: 1
+      recipe_type: Pulverizing
+      requirements:
+        Uranium Ingot: -1
+    - recipe_type: Raw Resource
+
+  Iridium Dust:
+    recipes:
+    - output: 1
+      recipe_type: Pulverizing
+      requirements:
+        Iridium Ingot: -1
+    - recipe_type: Raw Resource
+
+  Steel Dust:
+    recipes:
+    - output: 1
+      recipe_type: Hammering
+      requirements:
+        Iron Dust: -1
+        Coal: -4
+    - recipe_type: Raw Resource
+
+  Invar Dust:
+    recipes:
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Iron Dust: -2
+        Nickel Dust: -1
+    - recipe_type: Raw Resource
+
+  Electrum Dust:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Gold Dust: -1
+        Silver Dust: -1
+    - recipe_type: Raw Resource
+
+  Bronze Dust:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Copper Dust: -3
+        Tin Dust: -1
+    - recipe_type: Raw Resource
+
+  Enderium Dust:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Lead Dust: -3
+        Diamond Dust: -1
+        Ender Pearl: -2
+    - recipe_type: Raw Resource
+
+  Lumium Dust:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Tin Dust: -3
+        Silver Dust: -1
+        Glowstone Dust: -2
+    - recipe_type: Raw Resource
+  
+  Signalum Dust:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Copper Dust: -3
+        Silver Dust: -1
+        Redstone Dust: -4
+    - recipe_type: Raw Resource
+
+  Constantan Dust:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Copper Dust: -1
+        Nickel Dust: -1
+    - recipe_type: Raw Resource
+  
+  Brass Dust:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Copper Dust: -3
+        Zinc Dust: -1
+    - recipe_type: Raw Resource
+
+  Glass:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Hardened Glass:
+    recipes:
+    - output: 1
+      recipe_type: Induction Smelting
+      requirements:
+        Nether Quartz: -1
+        Obsidian: -1
+        Sand: -1
+    - recipe_type: Raw Resource
+
+  Redstone Flux Coil: 
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Redstone Dust: -2
+        Gold Ingot: -1
+    - recipe_type: Raw Resource
+
+  Iron Nugget:
+    recipes:
+    - output: 9
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Iron Gear:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -4
+        Iron Nugget: -1
+    - recipe_type: Raw Resource
+  
+  Copper Gear:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Copper Ingot: -4
+        Iron Nugget: -1
+    - recipe_type: Raw Resource
+
+  Tin Gear:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Tin Ingot: -4
+        Iron Nugget: -1
+    - recipe_type: Raw Resource
+
+  Nickel Gear:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Nickel Ingot: -4
+        Iron Nugget: -1
+    - recipe_type: Raw Resource
+
+  Silver Gear:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Silver Ingot: -4
+        Iron Nugget: -1
+    - recipe_type: Raw Resource
+
+  Lead Gear:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Lead Ingot: -4
+        Iron Nugget: -1
+    - recipe_type: Raw Resource
+
+  Invar Gear:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Invar Ingot: -4
+        Iron Nugget: -1
+    - recipe_type: Raw Resource
+
+  Lumium Gear:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Lumium Ingot: -4
+        Iron Nugget: -1
+    - recipe_type: Raw Resource
+
+  Constantan Gear:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Constantan Ingot: -4
+        Iron Nugget: -1
+    - recipe_type: Raw Resource
+
+  Electrum Plate:
+    recipes:
+    - output: 1
+      recipe_type: Hammering
+      requirements:
+        Electrum Ingot: -2
+    - output: 1
+      recipe_type: Pressing
+      requirements:
+        Electrum Ingot: -1
+    - recipe_type: Raw Resource
+
+  Lumium Plate:
+    recipes:
+    - output: 1
+      recipe_type: Hammering
+      requirements:
+        Lumium Ingot: -2
+    - output: 1
+      recipe_type: Pressing
+      requirements:
+        Lumium Ingot: -1
+    - recipe_type: Raw Resource
+
+  Signalum Plate:
+    recipes:
+    - output: 1
+      recipe_type: Hammering
+      requirements:
+        Signalum Ingot: -2
+    - output: 1
+      recipe_type: Pressing
+      requirements:
+        Signalum Ingot: -1
+    - recipe_type: Raw Resource
+
+  Machine Frame:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -4
+        Glass: -4
+        Tin Gear: -1
+    - recipe_type: Raw Resource
+
+  Stirling Dynamo:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Redstone Flux Coil: -1
+        Iron Gear: -1
+        Iron Ingot: -2
+        Redstone Dust: -1
+        Stone: -2
+    - recipe_type: Raw Resource
+
+  Magmatic Dynamo:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Redstone Flux Coil: -1
+        Invar Gear: -1
+        Iron Ingot: -2
+        Redstone Dust: -1
+        Invar Ingot: -2
+    - recipe_type: Raw Resource
+
+  Logistical Item Buffer:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Tin Ingot: -4
+        Nether Quartz: -2
+        Signalum Ingot: -1
+        Wood Planks: -2
+    - recipe_type: Raw Resource
+
+  Tinker's Workbench:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -3
+        Glass: -2
+        Crafting Table: -1
+        Wood Planks: -2
+        Redstone Flux Coil: -1
+    - recipe_type: Raw Resource
+
+  Energetic Infuser:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Electrum Ingot: -3
+        Block of Redstone: -1
+        Lead Ingot: -2
+        Redstone Flux Coil: -3
+    - recipe_type: Raw Resource
+
+  Redstone Furnace:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Redstone Dust: -1
+        Bricks: -2
+        Machine Frame: -1
+        Copper Gear: -2
+        Redstone Flux Coil: -1
+    - recipe_type: Raw Resource
+
+  Sawmill:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Saw Blade: -1
+        Stone: -2
+        Machine Frame: -1
+        Copper Gear: -2
+        Redstone Flux Coil: -1
+    - recipe_type: Raw Resource
+
+  Pulverizer:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Piston: -1
+        Flint: -2
+        Machine Frame: -1
+        Copper Gear: -2
+        Redstone Flux Coil: -1
+    - recipe_type: Raw Resource
+
+  Induction Smelter:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Blast Furnace: -1
+        Sand: -2
+        Machine Frame: -1
+        Invar Gear: -2
+        Redstone Flux Coil: -1
+    - recipe_type: Raw Resource
+
+  Phytogenic Insolator:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Dirt: -1
+        Glass: -2
+        Machine Frame: -1
+        Lumium Gear: -2
+        Redstone Flux Coil: -1
+    - recipe_type: Raw Resource
+
+  Centrifugal Separator:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Compass: -1
+        Tin Ingot: -2
+        Machine Frame: -1
+        Constantan Gear: -2
+        Redstone Flux Coil: -1
+    - recipe_type: Raw Resource
+
+  Multiservo Press:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Block of Iron: -1
+        Bronze Ingot: -2
+        Machine Frame: -1
+        Constantan Gear: -2
+        Redstone Flux Coil: -1
+    - recipe_type: Raw Resource
+
+  Magma Crucible:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Glass: -1
+        Nether Bricks: -2
+        Machine Frame: -1
+        Invar Gear: -2
+        Redstone Flux Coil: -1
+    - recipe_type: Raw Resource
+
+  Blast Chiller:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Glass: -1
+        Packed Ice: -2
+        Machine Frame: -1
+        Invar Gear: -2
+        Redstone Flux Coil: -1
+    - recipe_type: Raw Resource
+
+  Fractionating Still:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Glass: -1
+        Copper Ingot: -2
+        Machine Frame: -1
+        Invar Gear: -2
+        Redstone Flux Coil: -1
+    - recipe_type: Raw Resource
+
+  Pyrolyzer:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Blaze Rod: -1
+        Nether Bricks: -2
+        Machine Frame: -1
+        Constantan Gear: -2
+        Redstone Flux Coil: -1
+    - recipe_type: Raw Resource
+
+  Fluid Encapsulator:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Bucket: -1
+        Glass: -2
+        Machine Frame: -1
+        Copper Gear: -2
+        Redstone Flux Coil: -1
+    - recipe_type: Raw Resource
+
+  Alchemical Imbuer:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Brewing Stand: -1
+        Glass: -2
+        Machine Frame: -1
+        Constantan Gear: -2
+        Redstone Flux Coil: -1
+    - recipe_type: Raw Resource
+
+  Crystallizer:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Hardened Glass: -1
+        Signalum Plate: -2
+        Machine Frame: -1
+        Constantan Gear: -2
+        Redstone Flux Coil: -1
+    - recipe_type: Raw Resource
+
+  Sequential Fabricator:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Crafting Table: -1
+        Machine Frame: -1
+        Tin Ingot: -2
+        Copper Gear: -2
+        Redstone Flux Coil: -1
+    - recipe_type: Raw Resource
+
+  Saw Blade:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -6
+        Copper Ingot: -1
+    - recipe_type: Raw Resource
+
+  Flux Linkage Amplifier:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Lead Gear: -2
+        Electrum Plate: -2
+        Redstone Flux Coil: -1
+    - recipe_type: Raw Resource
+
+  Flux Efficiency:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Nickel Gear: -2
+        Lumium Plate: -2
+        Redstone Flux Coil: -1
+    - recipe_type: Raw Resource
+
+  Auxilary Reaction Chamber:
+    recipes: 
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Silver Gear: -2
+        Signalum Plate: -2
+        Hardened Glass: -1
+    - recipe_type: Raw Resource
+
+  Multi-cycle Injectors:
+    recipes: 
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Lead Gear: -2
+        Lumium Plate: -2
+        Hardened Glass: -1
+    - recipe_type: Raw Resource
+
+  Metallurgic Infuser:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -4
+        Redstone Dust: -2
+        Osmium Ingot: -1
+        Furnace: -2
+    - recipe_type: Raw Resource
+
+  Infused Alloy:
+    recipes:
+    - output: 1
+      recipe_type: Infusing
+      requirements:
+        Iron Ingot: -1
+        Redstone Dust: -1
+    - recipe_type: Raw Resource
+
+  Reinforced Alloy:
+    recipes:
+    - output: 1
+      recipe_type: Infusing
+      requirements:
+        Infused Alloy: -1
+        Diamond Dust: -2
+    - recipe_type: Raw Resource
+
+  Atomic Alloy:
+    recipes:
+    - output: 1
+      recipe_type: Infusing
+      requirements:
+        Reinforced Alloy: -1
+        Refined Obsidian Dust: -4
+    - recipe_type: Raw Resource
+
+  Basic Control Circuit:
+    recipes:
+    - output: 1
+      recipe_type: Infusing
+      requirements:
+        Osmium Ingot: -1
+        Redstone Dust: -2
+    - recipe_type: Raw Resource
+
+  Advanced Control Circuit:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Basic Control Circuit: -1
+        Infused Alloy: -2
+    - recipe_type: Raw Resource
+
+  Elite Control Circuit:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Advanced Control Circuit: -1
+        Reinforced Alloy: -2
+    - recipe_type: Raw Resource
+
+  Ultimate Control Circuit:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Elite Control Circuit: -1
+        Atomic Alloy: -2
+    - recipe_type: Raw Resource
+
+  Energy Tablet:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Gold Ingot: -3
+        Redstone Dust: -4
+        Infused Alloy: -2
+    - recipe_type: Raw Resource
+
+  Wind Generator:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Osmium Ingot: -3
+        Infused Alloy: -1
+        Energy Tablet: -2
+        Basic Control Circuit: -1
+    - recipe_type: Raw Resource
+
+  Basic Mechanical Pipe:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Steel Ingot: -2
+        Bucket: -1
+    - recipe_type: Raw Resource
+
+  Advanced Mechanical Pipe:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Basic Mechanical Pipe: -8
+        Infused Alloy: -1
+    - recipe_type: Raw Resource
+
+  Elite Mechanical Pipe:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Advanced Mechanical Pipe: -8
+        Reinforced Alloy: -1
+    - recipe_type: Raw Resource
+
+  Ultimate Mechanical Pipe:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Elite Mechanical Pipe: -8
+        Atomic Alloy: -1
+    - recipe_type: Raw Resource
+
+  Basic Logistical Transporter:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Steel Ingot: -2
+        Basic Control Circuit: -1
+    - recipe_type: Raw Resource
+
+  Advanced Logistical Transporter:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Basic Logistical Transporter: -8
+        Infused Alloy: -1
+    - recipe_type: Raw Resource
+
+  Elite Logistical Transporter:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Advanced Logistical Transporter: -8
+        Reinforced Alloy: -1
+    - recipe_type: Raw Resource
+
+  Ultimate Logistical Transporter:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Elite Logistical Transporter: -8
+        Atomic Alloy: -1
+    - recipe_type: Raw Resource
+
+  Basic Universal Cable:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Steel Ingot: -2
+        Redstone Dust: -1
+    - recipe_type: Raw Resource
+
+  Advanced Universal Cable:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Basic Universal Cable: -8
+        Infused Alloy: -1
+    - recipe_type: Raw Resource
+
+  Elite Universal Cable:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Advanced Universal Cable: -8
+        Reinforced Alloy: -1
+    - recipe_type: Raw Resource
+
+  Ultimate Universal Cable:
+    recipes:
+    - output: 8
+      recipe_type: Crafting
+      requirements:
+        Elite Universal Cable: -8
+        Atomic Alloy: -1
+    - recipe_type: Raw Resource
+
+  Logistical Sorter:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -7
+        Basic Control Circuit: -1
+        Piston: -1
+    - recipe_type: Raw Resource
+
+  Energy Battery:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Crystallized Menril Chunk: -6
+        Block of Crystallized Menril: -2
+        Block of Redstone: -1
+    - recipe_type: Raw Resource
+
+  Squeezer:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Block of Iron: -1
+        Stick: -4
+        Wood Planks: -2
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Mechanical Squeezer:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Diamond: -1
+        Energy Battery: -2
+        Squeezer: -1
+        Obsidian: -1
+    - recipe_type: Raw Resource
+
+  Mechanical Sieve:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Block of Iron: -2
+        Glass: -1
+        Iron Bars: -4
+        Hopper: -1
+    - recipe_type: Raw Resource
+
+  Wood Drawer:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Chest: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Wood Planks: -8
+        Chest: -1
+    - recipe_type: Raw Resource
+
+  Simple Compacting Drawer:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stone: -6
+        Wood Drawer: -1
+        Iron Ingot: -1
+        Piston: -1
+    - recipe_type: Raw Resource
+
+  Compacting Drawer:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stone: -5
+        Wood Drawer: -1
+        Iron Ingot: -1
+        Piston: -2
+    - recipe_type: Raw Resource
+
+  Stone Essence:
+    recipes: 
+    - recipe_type: Raw Resource
+
+  Ice Essence:
+    recipes: 
+    - recipe_type: Raw Resource
+
+  Coal Essence:
+    recipes: 
+    - recipe_type: Raw Resource
+
+  Redstone Essence:
+    recipes: 
+    - recipe_type: Raw Resource
+
+  Obsidian Essence:
+    recipes: 
+    - recipe_type: Raw Resource
+
+  Nether Essence:
+    recipes: 
+    - recipe_type: Raw Resource
+
+  End Essence:
+    recipes: 
+    - recipe_type: Raw Resource
+
+  
