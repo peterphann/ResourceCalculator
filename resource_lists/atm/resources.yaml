@@ -17,35 +17,101 @@ recipe_types:
   Pulverizing: Pulverize {IN_ITEMS} into {OUT_ITEM}
   Induction Smelting: Induction smelt {IN_ITEMS} into {OUT_ITEM}
   Infusing: Infuse {IN_ITEMS} into {OUT_ITEM}
+  Squeezing: Squeeze {IN_ITEMS} and dry into {OUT_ITEM}  
+  Mechanical Squeezing: Mechanically squeeze {IN_ITEMS} into {OUT_ITEM}  
   Hammering: Hammer {IN_ITEMS} into {OUT_ITEM}
   Pressing: Press {IN_ITEMS} into {OUT_ITEM}
   Strip: Right click on {IN_ITEMS} with an Axe to strip it into {OUT_ITEM}
+  Inscribing: Inscribe {IN_ITEMS} into {OUT_ITEM}
+  Logic Inscribing: Inscribe {IN_ITEMS} with a Logic Press into {OUT_ITEM}
+  Calculation Inscribing: Inscribe {IN_ITEMS} with a Calculation Press into {OUT_ITEM}
+  Engineering Inscribing: Inscribe {IN_ITEMS} with an Engineering Press into {OUT_ITEM}
+  Silicon Inscribing: Inscribe {IN_ITEMS} with a Silicon Press into {OUT_ITEM}
+  Charging: Charge {IN_ITEMS} into {OUT_ITEM}
+  Submerging: Submerge {IN_ITEMS} in Water into {OUT_ITEM}
+  AE2 Cutting: Cut {IN_ITEMS} with a Quartz Cutting Knife into {OUT_ITEM}
+  Combining: Combine {IN_ITEMS} into {OUT_ITEM}
+  Compacting: Compact {IN_ITEMS} into {OUT_ITEM}
+  Smithing Table: Use a smithing table to upgrade {IN_ITEMS} into {OUT_ITEM}
+  Dissolving: Dissolve {IN_ITEMS} into {OUT_ITEM}
+
+requirement_groups:
+  Log:
+  - Oak Log
+  - Menril Log
+  Planks:
+  - Oak Planks
+  - Menril Planks
+  Stripped Log:
+  - Stripped Oak Log
+  Any Certus Quartz:
+  - Certus Quartz Crystal
+  - Charged Certus Quartz Crystal
+  Metal Ingot:
+  - Iron Ingot
+  - Gold Ingot
+  - Copper Ingot
+  - Tin Ingot
+  - Nickel Ingot
+  - Silver Ingot
+  - Lead Ingot
+  - Zinc Ingot
+  - Aluminum Ingot
+  - Osmium Ingot
+  - Platinum Ingot
+  - Uranium Ingot
+  - Iridium Ingot
+  - Steel Ingot
+  - Invar Ingot
+  - Electrum Ingot
+  - Bronze Ingot
+  - Enderium Ingot
+  - Lumium Ingot
+  - Signalum Ingot
+  - Constantan Ingot
+  - Brass Ingot
 
 default_stack_size: Stack
 
 resources:
-  Dirt:
-    recipes:
-    - recipe_type: Raw Resource
-  
-  Wood Log:
+  Oak Log:
     recipes:
     - recipe_type: Raw Resource
 
-  Stripped Wood Log:
+  Stripped Oak Log:
     recipes:
     - output: 1
       recipe_type: Strip
       requirements:
-        Wood Log: -1
+        Oak Log: -1
     - recipe_type: Raw Resource
 
-  Wood Planks:
+  Oak Planks:
     recipes:
     - output: 4
       recipe_type: Crafting
       requirements:
-        Wood Log: -1
+        Oak Log: -1
+    - recipe_type: Raw Resource
+
+  Menril Log:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 16
+      recipe_type: Crafting
+      requirements:
+        Menril Essence: -3
+
+  Menril Planks:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Menril Log: -1
+    - recipe_type: Raw Resource
+
+  Dirt:
+    recipes:
     - recipe_type: Raw Resource
 
   Sand:
@@ -100,6 +166,14 @@ resources:
         Stone: -1
     - recipe_type: Raw Resource
 
+  Wool:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        String: -4
+
   Iron Bars:
     recipes:
     - output: 16
@@ -149,7 +223,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Wood Planks: -4
+        Planks: -4
     - recipe_type: Raw Resource
 
   Furnace:
@@ -165,7 +239,7 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Stripped Wood Log: -4
+        Stripped Log: -4
         Furnace: -1
     - recipe_type: Raw Resource
 
@@ -184,11 +258,29 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Wood Planks: -8
+        Planks: -8
     - output: 4
       recipe_type: Crafting
       requirements:
-        Wood Log: -8
+        Log: -8
+    - recipe_type: Raw Resource
+
+  Torch:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Stick: -1
+        Coal: -1
+    - recipe_type: Raw Resource
+
+  Redstone Torch:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -1
+        Redstone Dust: -1
     - recipe_type: Raw Resource
 
   Brewing Stand:
@@ -205,10 +297,19 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Wood Planks: -3
+        Planks: -3
         Cobblestone: -4
         Iron Ingot: -1
         Redstone Dust: -1
+    - recipe_type: Raw Resource
+
+  Sticky Piston:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Piston: -1
+        Slimeball: -1
     - recipe_type: Raw Resource
 
   Hopper:
@@ -217,12 +318,21 @@ resources:
       recipe_type: Crafting
       requirements:
         Iron Ingot: -5
-        Wood Log: -2
+        Log: -2
     - output: 1
       recipe_type: Crafting
       requirements:
         Iron Ingot: -5
         Chest: -1
+    - recipe_type: Raw Resource
+
+  Lever:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Stick: -1
+        Cobblestone: -1
     - recipe_type: Raw Resource
 
   Bucket:
@@ -238,11 +348,11 @@ resources:
     - output: 4
       recipe_type: Crafting
       requirements:
-        Wood Planks: -2
+        Planks: -2
     - output: 16
       recipe_type: Crafting
       requirements:
-        Wood Log: -2
+        Log: -2
     - recipe_type: Raw Resource
 
   String:
@@ -255,6 +365,18 @@ resources:
 
   Clay Ball:
     recipes:
+    - recipe_type: Raw Resource
+
+  Sugar Cane:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Sugar:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Sugar Cane: -1
     - recipe_type: Raw Resource
 
   Brick:
@@ -285,6 +407,19 @@ resources:
         Blaze Rod: -1
     - recipe_type: Raw Resource
 
+  Honeycomb: 
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Combining
+      requirements:
+        Sucrose: -3
+        Triglyceride: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Honey Essence: -3
+
   Compass:
     recipes:
     - output: 1
@@ -310,6 +445,10 @@ resources:
     recipes:
     - recipe_type: Raw Resource
 
+  Slimeball:
+    recipes:
+    - recipe_type: Raw Resource
+
   Ender Pearl:
     recipes:
     - recipe_type: Raw Resource
@@ -317,14 +456,51 @@ resources:
   Diamond:
     recipes:
     - recipe_type: Raw Resource
+    - output: 9
+      recipe_type: Crafting
+      requirements:
+        Block of Diamond: -1
 
   Emerald:
     recipes:
+    - recipe_type: Raw Resource
+    - output: 9
+      recipe_type: Crafting
+      requirements:
+        Block of Emerald: -1
+
+  Ancient Debris:
+    recipes:
+    - recipe_type: Raw Resource
+
+  Netherite Scrap:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Ancient Debris: -1
+    - recipe_type: Raw Resource
+
+  Netherite Ingot:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Netherite Scrap: -4
+        Gold Ingot: -4
+    - output: 9
+      recipe_type: Crafting
+      requirements:
+        Block of Netherite: -1
     - recipe_type: Raw Resource
 
   Lapis Lazuli:
     recipes:
     - recipe_type: Raw Resource
+    - output: 9
+      recipe_type: Crafting
+      requirements:
+        Block of Lapis Lazuli: -1
 
   Crystallized Menril Chunk:
     recipes:
@@ -333,10 +509,22 @@ resources:
       recipe_type: Crafting
       requirements:
         Block of Crystallized Menril: -1
+    - output: 3
+      recipe_type: Mechanical Squeezing
+      requirements:
+        Menril Log: -1
+    - output: 1
+      recipe_type: Mechanical Squeezing
+      requirements:
+        Menril Planks: -1
 
   Coal:
     recipes:
     - recipe_type: Raw Resource
+    - output: 9
+      recipe_type: Crafting
+      requirements:
+        Block of Coal: -1
     - output: 12
       recipe_type: Crafting
       requirements:
@@ -344,6 +532,72 @@ resources:
 
   Nether Quartz:
     recipes:
+    - recipe_type: Raw Resource
+
+  Certus Quartz Crystal:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Certus Quartz Essence: -8
+
+  Charged Certus Quartz Crystal:
+    recipes:
+    - output: 1
+      recipe_type: Charging
+      requirements:
+        Certus Quartz Crystal: -1
+    - recipe_type: Raw Resource
+
+  Certus Quartz Dust:
+    recipes:
+    - output: 1
+      recipe_type: Inscribing
+      requirements:
+        Any Certus Quartz: -1
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Certus Quartz Essence: -3
+    - recipe_type: Raw Resource
+
+  Fluix Crystal:
+    recipes:
+    - output: 2
+      recipe_type: Submerging
+      requirements:
+        Charged Certus Quartz Crystal: -1
+        Redstone Dust: -1
+        Nether Quartz: -1
+    - output: 6
+      recipe_type: Crafting
+      requirements:
+        Fluix Essence: -8
+    - recipe_type: Raw Resource
+
+  Fluix Dust:
+    recipes:
+    - output: 1
+      recipe_type: Inscribing
+      requirements:
+        Fluix Crystal: -1
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Fluix Essence: -3
+    - recipe_type: Raw Resource  
+
+  Sky Stone Dust:
+    recipes:
+      - recipe_type: Raw Resource
+
+  Silicon:
+    recipes:
+    - output: 1
+      recipe_type: Smelting
+      requirements:
+        Certus Quartz Dust: -1
     - recipe_type: Raw Resource
 
   Iron Ingot:
@@ -365,6 +619,10 @@ resources:
       recipe_type: Smelting
       requirements:
         Gold Dust: -1
+    - output: 9
+      recipe_type: Crafting
+      requirements:
+        Block of Gold: -1
 
   Copper Ingot:
     recipes:
@@ -373,6 +631,10 @@ resources:
       recipe_type: Smelting
       requirements:
         Copper Dust: -1
+    - output: 9
+      recipe_type: Crafting
+      requirements:
+        Block of Copper: -1
 
   Tin Ingot:
     recipes:
@@ -460,6 +722,10 @@ resources:
       recipe_type: Smelting
       requirements:
         Steel Dust: -1
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Steel Essence: -8
     - recipe_type: Raw Resource
 
   Invar Ingot:
@@ -526,14 +792,6 @@ resources:
         Brass Dust: -1
     - recipe_type: Raw Resource
 
-  Block of Iron:
-    recipes:
-    - output: 1
-      recipe_type: Crafting
-      requirements:
-        Iron Ingot: -9
-    - recipe_type: Raw Resource
-
   Block of Redstone:
     recipes:
     - output: 1
@@ -542,12 +800,100 @@ resources:
         Redstone Dust: -9
     - recipe_type: Raw Resource
 
+  Block of Diamond:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Diamond: -9
+    - recipe_type: Raw Resource
+
+  Block of Emerald:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Emerald: -9
+    - recipe_type: Raw Resource
+
+  Block of Netherite:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Netherite Ingot: -9
+    - recipe_type: Raw Resource
+
+  Block of Lapis Lazuli:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Lapis Lazuli: -9
+    - recipe_type: Raw Resource
+
+  Block of Coal:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Coal: -9
+    - recipe_type: Raw Resource
+
+  Block of Iron:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -9
+    - recipe_type: Raw Resource
+
+  Block of Gold:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Gold Ingot: -9
+    - recipe_type: Raw Resource
+
+  Block of Copper:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Copper Ingot: -9
+    - recipe_type: Raw Resource
+
+  Steel Block:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Steel Ingot: -9
+    - recipe_type: Raw Resource
+
+  Steel Block 1x:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Steel Block: -9
+    - recipe_type: Raw Resource
+
   Block of Crystallized Menril:
     recipes:
     - output: 1
       recipe_type: Crafting
       requirements:
        Crystallized Menril Chunk: -9
+    - output: 1
+      recipe_type: Squeezing
+      requirements:
+        Menril Log: -1
+    - output: 1
+      recipe_type: Squeezing
+      requirements:
+        Menril Planks: -4
     - recipe_type: Raw Resource
 
   Iron Dust:
@@ -875,6 +1221,18 @@ resources:
         Iron Nugget: -1
     - recipe_type: Raw Resource
 
+  Iron Plate:
+    recipes:
+    - output: 1
+      recipe_type: Hammering
+      requirements:
+        Iron Ingot: -2
+    - output: 1
+      recipe_type: Pressing
+      requirements:
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
   Electrum Plate:
     recipes:
     - output: 1
@@ -953,7 +1311,7 @@ resources:
         Tin Ingot: -4
         Nether Quartz: -2
         Signalum Ingot: -1
-        Wood Planks: -2
+        Planks: -2
     - recipe_type: Raw Resource
 
   Tinker's Workbench:
@@ -964,7 +1322,7 @@ resources:
         Iron Ingot: -3
         Glass: -2
         Crafting Table: -1
-        Wood Planks: -2
+        Planks: -2
         Redstone Flux Coil: -1
     - recipe_type: Raw Resource
 
@@ -1208,6 +1566,16 @@ resources:
         Hardened Glass: -1
     - recipe_type: Raw Resource
 
+  Steel Casing:
+    recipes: 
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Steel Ingot: -4
+        Glass: -4
+        Osmium Ingot: -1
+    - recipe_type: Raw Resource
+
   Metallurgic Infuser:
     recipes:  
     - output: 1
@@ -1217,6 +1585,100 @@ resources:
         Redstone Dust: -2
         Osmium Ingot: -1
         Furnace: -2
+    - recipe_type: Raw Resource
+
+  Basic Energy Cube:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Redstone Dust: -4
+        Energy Tablet: -2
+        Iron Ingot: -2
+        Steel Casing: -1
+    - recipe_type: Raw Resource
+
+  Advanced Energy Cube:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Infused Alloy: -4
+        Energy Tablet: -2
+        Osmium Ingot: -2
+        Basic Energy Cube: -1
+    - recipe_type: Raw Resource
+
+  Elite Energy Cube:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Reinforced Alloy: -4
+        Energy Tablet: -2
+        Gold Ingot: -2
+        Advanced Energy Cube: -1
+    - recipe_type: Raw Resource
+
+  Ultimate Energy Cube:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Atomic Alloy: -4
+        Energy Tablet: -2
+        Diamond: -2
+        Elite Energy Cube: -1
+    - recipe_type: Raw Resource
+
+  Basic Induction Cell:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Energy Tablet: -4
+        Lithium Dust: -4
+        Basic Energy Cube: -1
+    - recipe_type: Raw Resource
+
+  Advanced Induction Cell:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Energy Tablet: -4
+        Basic Induction Cell: -4
+        Advanced Energy Cube: -1
+    - recipe_type: Raw Resource
+
+  Elite Induction Cell:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Energy Tablet: -4
+        Advanced Induction Cell: -4
+        Elite Energy Cube: -1
+    - recipe_type: Raw Resource
+
+  Ultimate Induction Cell:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Energy Tablet: -4
+        Elite Induction Cell: -4
+        Ultimate Energy Cube: -1
+    - recipe_type: Raw Resource
+    
+  Superheating Element:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Redstone Dust: -4
+        Copper Ingot: -4
+        Steel Casing: -1
     - recipe_type: Raw Resource
 
   Infused Alloy:
@@ -1438,7 +1900,7 @@ resources:
       requirements:
         Block of Iron: -1
         Stick: -4
-        Wood Planks: -2
+        Planks: -2
         Iron Ingot: -1
     - recipe_type: Raw Resource
 
@@ -1473,7 +1935,16 @@ resources:
     - output: 1
       recipe_type: Crafting
       requirements:
-        Wood Planks: -8
+        Planks: -8
+        Chest: -1
+    - recipe_type: Raw Resource
+
+  Framed Drawer (1x1):
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Nugget: -8
         Chest: -1
     - recipe_type: Raw Resource
 
@@ -1488,6 +1959,17 @@ resources:
         Piston: -1
     - recipe_type: Raw Resource
 
+  Framed Simple Compacting Drawer:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Nugget: -6
+        Piston: -1
+        Wood Drawer: -1
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
   Compacting Drawer:
     recipes:
     - output: 1
@@ -1499,7 +1981,700 @@ resources:
         Piston: -2
     - recipe_type: Raw Resource
 
+  Framed Compacting Drawer:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Nugget: -5
+        Piston: -2
+        Wood Drawer: -1
+        Iron Ingot: -1
+    - recipe_type: Raw Resource
+
+  Copper Upgrade:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Wood Drawer: -1
+        Copper Ingot: -4
+        Block of Copper: -2
+        Chest: -2
+    - recipe_type: Raw Resource
+
+  Gold Upgrade:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Copper Upgrade: -1
+        Gold Ingot: -3
+        Block of Gold: -3
+        Chest: -2
+    - recipe_type: Raw Resource
+
+  Diamond Upgrade:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Gold Upgrade: -1
+        Diamond: -4
+        Block of Diamond: -2
+        Chest: -2
+    - recipe_type: Raw Resource
+
+  Netherite Upgrade:
+    recipes:
+    - output: 1
+      recipe_type: Smithing Table
+      requirements:
+        Diamond Upgrade: -1
+        Netherite Ingot: -1
+    - recipe_type: Raw Resource
+
+  Iron Downgrade:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Wood Drawer: -1
+        Iron Ingot: -8
+    - recipe_type: Raw Resource
+
+  Inscriber Calculation Press:
+    recipes:
+    - output: 1
+      recipe_type: Inscribing
+      requirements:
+        Sky Stone Dust: -1
+        Certus Quartz Crystal: -1
+        Iron Plate: -1
+    - output: 1
+      recipe_type: Calculation Inscribing
+      requirements:
+        Block of Iron: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Certus Quartz Essence: -8
+        Certus Quartz Crystal: -1
+    - recipe_type: Raw Resource
+
+  Inscriber Engineering Press:
+    recipes:
+    - output: 1
+      recipe_type: Inscribing
+      requirements:
+        Sky Stone Dust: -1
+        Diamond: -1
+        Iron Plate: -1
+    - output: 1
+      recipe_type: Engineering Inscribing
+      requirements:
+        Block of Iron: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Certus Quartz Essence: -8
+        Diamond: -1
+    - recipe_type: Raw Resource
+
+  Inscriber Logic Press:
+    recipes:
+    - output: 1
+      recipe_type: Inscribing
+      requirements:
+        Sky Stone Dust: -1
+        Gold Ingot: -1
+        Iron Plate: -1
+    - output: 1
+      recipe_type: Logic Inscribing
+      requirements:
+        Block of Iron: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Certus Quartz Essence: -8
+        Gold Ingot: -1
+    - recipe_type: Raw Resource
+
+  Inscriber Silicon Press:
+    recipes:
+    - output: 1
+      recipe_type: Inscribing
+      requirements:
+        Sky Stone Dust: -1
+        Silicon: -1
+        Iron Plate: -1
+    - output: 1
+      recipe_type: Silicon Inscribing
+      requirements:
+        Block of Iron: -1
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Certus Quartz Essence: -8
+        Silicon: -1
+    - recipe_type: Raw Resource
+
+  Printed Calculation Circuit:
+    recipes:
+    - output: 1
+      recipe_type: Calculation Inscribing
+      requirements:
+        Certus Quartz Crystal: -1
+    - recipe_type: Raw Resource
+
+  Printed Engineering Circuit:
+    recipes:
+    - output: 1
+      recipe_type: Engineering Inscribing
+      requirements:
+        Diamond: -1
+    - recipe_type: Raw Resource
+
+  Printed Logic Circuit:
+    recipes:
+    - output: 1
+      recipe_type: Logic Inscribing
+      requirements:
+        Gold Ingot: -1
+    - recipe_type: Raw Resource
+
+  Printed Silicon:
+    recipes:
+    - output: 1
+      recipe_type: Silicon Inscribing
+      requirements:
+        Silicon: -1
+    - recipe_type: Raw Resource
+
+  Logic Processor:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Inscribing
+      requirements:
+        Printed Logic Circuit: -1
+        Printed Silicon: -1
+        Redstone Dust: -1
+
+  Calculation Processor:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Inscribing
+      requirements:
+        Printed Calculation Circuit: -1
+        Printed Silicon: -1
+        Redstone Dust: -1
+
+  Engineering Processor:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Inscribing
+      requirements:
+        Printed Engineering Circuit: -1
+        Printed Silicon: -1
+        Redstone Dust: -1
+
+  Basic Card:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Gold Ingot: -2
+        Iron Ingot: -3
+        Redstone Dust: -1
+        Calculation Processor: -1
+    - recipe_type: Raw Resource
+
+  Redstone Card:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Basic Card: -1
+        Redstone Torch: -1
+    - recipe_type: Raw Resource
+
+  Capacity Card:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Basic Card: -1
+        Any Certus Quartz: -1
+    - recipe_type: Raw Resource
+
+  Overflow Destruction Card:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Basic Card: -1
+        Calculation Processor: -1
+    - recipe_type: Raw Resource
+
+  Advanced Card:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Diamond: -2
+        Iron Ingot: -3
+        Redstone Dust: -1
+        Calculation Processor: -1 
+    - recipe_type: Raw Resource
+
+  Fuzzy Card:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Advanced Card: -1
+        Wool: -1
+    - recipe_type: Raw Resource
+
+  Acceleration Card:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Advanced Card: -1
+        Fluix Crystal: -1
+    - recipe_type: Raw Resource
+
+  Inverter Card:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Advanced Card: -1
+        Redstone Torch: -1
+    - recipe_type: Raw Resource
+
+  Crafting Card:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Basic Card: -1
+        Crafting Table: -1
+    - recipe_type: Raw Resource
+
+  Equal Distribution Card:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Advanced Card: -1
+        Calculation Processor: -1
+    - recipe_type: Raw Resource
+
+  Energy Card:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Advanced Card: -1
+        Dense Energy Cell: -1
+    - recipe_type: Raw Resource
+
+  1k ME Storage Component:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Logic Processor: -1
+        Any Certus Quartz: -4
+        Redstone Dust: -4
+    - recipe_type: Raw Resource
+
+  4k ME Storage Component:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Quartz Glass: -1
+        1k ME Storage Component: -3
+        Calculation Processor: -1
+        Redstone Dust: -4
+    - recipe_type: Raw Resource
+
+  16k ME Storage Component:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Quartz Glass: -1
+        4k ME Storage Component: -3
+        Calculation Processor: -1
+        Glowstone Dust: -4
+    - recipe_type: Raw Resource
+
+  64k ME Storage Component:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Quartz Glass: -1
+        16k ME Storage Component: -3
+        Calculation Processor: -1
+        Glowstone Dust: -4
+    - recipe_type: Raw Resource
+
+  256k ME Storage Component:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Quartz Glass: -1
+        64k ME Storage Component: -3
+        Calculation Processor: -1
+        Sky Stone Dust: -4
+    - recipe_type: Raw Resource
+  
+  1k ME Item Storage Cell:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Quartz Glass: -2
+        Redstone Dust: -3
+        Iron Ingot: -3
+        1k ME Storage Component: -1
+    - recipe_type: Raw Resource
+
+  4k ME Item Storage Cell:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Quartz Glass: -2
+        Redstone Dust: -3
+        Iron Ingot: -3
+        4k ME Storage Component: -1
+    - recipe_type: Raw Resource
+
+  16k ME Item Storage Cell:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Quartz Glass: -2
+        Redstone Dust: -3
+        Iron Ingot: -3
+        16k ME Storage Component: -1
+    - recipe_type: Raw Resource
+
+  64k ME Item Storage Cell:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Quartz Glass: -2
+        Redstone Dust: -3
+        Iron Ingot: -3
+        64k ME Storage Component: -1
+    - recipe_type: Raw Resource
+
+  256k ME Item Storage Cell:
+    recipes:
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Quartz Glass: -2
+        Redstone Dust: -3
+        Iron Ingot: -3
+        256k ME Storage Component: -1
+    - recipe_type: Raw Resource
+
+  Formation Core:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Any Certus Quartz: -1
+        Fluix Dust: -1
+        Logic Processor: -1
+    - recipe_type: Raw Resource
+
+  Annihilation Core:
+    recipes:
+    - output: 2
+      recipe_type: Crafting
+      requirements:
+        Nether Quartz: -1
+        Fluix Dust: -1
+        Logic Processor: -1
+    - recipe_type: Raw Resource
+
+  Quartz Glass:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Certus Quartz Dust: -5
+        Glass: -4
+    - recipe_type: Raw Resource
+
+  Energy Acceptor:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -4
+        Quartz Glass: -4
+        Copper Ingot: -1
+    - recipe_type: Raw Resource
+
+  ME Interface:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Glass: -2
+        Iron Ingot: -4
+        Annihilation Core: -1
+        Formation Core: -1
+    - recipe_type: Raw Resource
+
+  ME Pattern Provider:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Crafting Table: -2
+        Iron Ingot: -4
+        Annihilation Core: -1
+        Formation Core: -1
+    - recipe_type: Raw Resource
+
+  Energy Cell:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Any Certus Quartz: -4
+        Fluix Dust: -4
+        Quartz Glass: -1
+    - recipe_type: Raw Resource
+
+  Dense Energy Cell:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Energy Cell: -8
+        Calculation Processor: -1
+    - recipe_type: Raw Resource
+
+  Fluix ME Glass Cable:
+    recipes:
+    - output: 4
+      recipe_type: Crafting
+      requirements:
+        Quartz Fiber: -1
+        Fluix Crystal: -2
+    - recipe_type: Raw Resource
+
+  Quartz Fiber:
+    recipes:  
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Glass: -6
+        Certus Quartz Dust: -3
+    - recipe_type: Raw Resource
+
+  ME Toggle Bus:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Fluix ME Glass Cable: -2
+        Lever: -1
+        Redstone Dust: -2
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        ME Inverted Toggle Bus: -1
+    - recipe_type: Raw Resource
+
+  ME Inverted Toggle Bus:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        ME Toggle Bus: -1
+    - recipe_type: Raw Resource
+
+  Cable Anchor:
+    recipes:  
+    - output: 4
+      recipe_type: AE2 Cutting
+      requirements:
+        Metal Ingot: -1
+    - recipe_type: Raw Resource
+
+  Illuminated Panel:
+    recipes:  
+    - output: 3
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -1
+        Glowstone Dust: -2
+        Redstone Dust: -1
+        Quartz Glass: -3
+    - recipe_type: Raw Resource
+
+  ME Storage Bus:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        ME Interface: -1
+        Sticky Piston: -1
+        Piston: -1
+    - recipe_type: Raw Resource
+
+  ME Import Bus:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Annihilation Core: -1
+        Iron Ingot: -2
+        Sticky Piston: -1
+    - recipe_type: Raw Resource
+
+  ME Export Bus:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -2
+        Formation Core: -1
+        Piston: -1
+    - recipe_type: Raw Resource
+
+  ME Level Emitter:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Redstone Torch: -1
+        Calculation Processor: -1
+    - recipe_type: Raw Resource
+
+  ME Energy Level Emitter:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Redstone Torch: -1
+        Calculation Processor: -1
+        Charged Certus Quartz Crystal: -1
+    - recipe_type: Raw Resource
+
+  ME Annihilation Plane:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -2
+        Annihilation Core: -1
+        Fluix Crystal: -3
+    - recipe_type: Raw Resource
+
+  ME Formation Plane:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -2
+        Formation Core: -1
+        Fluix Crystal: -3
+    - recipe_type: Raw Resource
+
+  ME Pattern Encoding Terminal:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Engineering Processor: -1
+        ME Crafting Terminal: -1
+    - recipe_type: Raw Resource
+
+  ME Crafting Terminal:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        ME Terminal: -1
+        Crafting Table: -1
+        Calculation Processor: -1
+    - recipe_type: Raw Resource
+
+  ME Terminal:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Illuminated Panel: -1
+        Logic Processor: -1
+        Annihilation Core: -1
+        Formation Core: -1
+    - recipe_type: Raw Resource
+
+  ME Storage Monitor:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        ME Level Emitter: -1
+        Illuminated Panel: -1
+    - recipe_type: Raw Resource
+
+  ME Conversion Monitor:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        ME Storage Monitor: -1
+        Annihilation Core: -1
+        Formation Core: -1
+    - recipe_type: Raw Resource
+
+  ME Pattern Access Terminal:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Illuminated Panel: -1
+        ME Pattern Provider: -1
+        Engineering Processor: -1
+    - recipe_type: Raw Resource
+    
+  ME P2P Tunnel:
+    recipes:  
+    - output: 1
+      recipe_type: Crafting
+      requirements:
+        Iron Ingot: -3
+        Fluix Crystal: -3
+        Engineering Processor: -1
+    - recipe_type: Raw Resource
+
   Stone Essence:
+    recipes: 
+    - recipe_type: Raw Resource
+
+  Honey Essence:
     recipes: 
     - recipe_type: Raw Resource
 
@@ -1515,7 +2690,23 @@ resources:
     recipes: 
     - recipe_type: Raw Resource
 
+  Certus Quartz Essence:
+    recipes: 
+    - recipe_type: Raw Resource
+
+  Steel Essence:
+    recipes: 
+    - recipe_type: Raw Resource
+
+  Fluix Essence:
+    recipes: 
+    - recipe_type: Raw Resource
+
   Obsidian Essence:
+    recipes: 
+    - recipe_type: Raw Resource
+
+  Menril Essence:
     recipes: 
     - recipe_type: Raw Resource
 
@@ -1527,4 +2718,58 @@ resources:
     recipes: 
     - recipe_type: Raw Resource
 
-  
+  Hydrogen:
+    recipes: 
+    - recipe_type: Raw Resource
+
+  Lithium:
+    recipes: 
+    - recipe_type: Raw Resource
+
+  Oxygen:
+    recipes: 
+    - recipe_type: Raw Resource
+
+  Carbon:
+    recipes: 
+    - recipe_type: Raw Resource
+
+  Lithium Dust:
+    recipes: 
+    - output: 1
+      recipe_type: Compacting
+      requirements:
+        Lithium: -16
+    - recipe_type: Raw Resource
+
+  Sucrose:
+    recipes:
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Combining
+      requirements:
+        Hydrogen: -22
+        Oxygen: -11
+        Carbon: -11
+    - output: 1
+      recipe_type: Dissolving
+      requirements:
+        Sugar Cane: -1
+    - output: 1
+      recipe_type: Dissolving
+      requirements:
+        Sugar: -1
+
+  Triglyceride:
+    recipes: 
+    - recipe_type: Raw Resource
+    - output: 1
+      recipe_type: Combining
+      requirements:
+        Hydrogen: -32
+        Oxygen: -2
+        Carbon: -18
+    - output: 1
+      recipe_type: Dissolving
+      requirements:
+        Wool: -1
